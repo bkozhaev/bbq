@@ -3,22 +3,22 @@
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
   <div class="form-group">
-    <%= f.label :title %>
+    <%= f.label :Название_события %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :address %>
+    <%= f.label :Место_проведения_события %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :datetime %>
+    <%= f.label :Время_и_дата_проведения_события %>
     <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
   </div>
 
   <div class="form-group">
-    <%= f.label :description %>
+    <%= f.label :Описание_события %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
