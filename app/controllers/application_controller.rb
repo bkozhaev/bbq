@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
     user_signed_in? && event.user == current_user
   end
 
+
+
 end
