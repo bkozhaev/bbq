@@ -5,9 +5,10 @@
     <%= f.label :email %>
 
     <%= f.email_field :email, autofocus: true, autocomplete: "email", label: 'Email', placeholder: 'example@domain.com', hide_label: true %>
+    <%=f.error_span(:email) %>
     <%= f.label :Пароль %>
     <%= f.password_field :password, autocomplete: "off", hide_label: true%>
-
+    <%=f.error_span(:password) %>
 
 
     <% if devise_mapping.rememberable? -%>

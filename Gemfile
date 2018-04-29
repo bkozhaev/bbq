@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'russian'
 
 gem 'twitter-bootstrap-rails'
 

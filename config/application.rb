@@ -26,6 +26,7 @@ module Bbq
     # -- all .rb files in that directory are automatically loaded.
 
     # Don't generate system test files.
+    config.i18n.default_locale = :ru
     config.generators.system_tests = nil
   end
 end
