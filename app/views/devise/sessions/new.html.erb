@@ -1,15 +1,22 @@
-<h2>Войти</h2>
+<div class="ro">
+  <h2>Войти</h2>
 
-<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), label_errors: true) do |f| %>
+  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), inline_errors: true, label_errors: true, layout: :horizontal, control_col: "col-4 col-sm-4 col-md-4") do |f| %>
+    <%= f.label :email %>
 
-  <%= f.email_field :email, autofocus: true, autocomplete: "email", label: 'Email', placeholder: 'example@domain.com' %>
-  <%= f.password_field :password, autocomplete: "off", label: 'Пароль' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", label: 'Email', placeholder: 'example@domain.com', hide_label: true %>
+    <%= f.label :Пароль %>
+    <%= f.password_field :password, autocomplete: "off", hide_label: true%>
 
-  <% if devise_mapping.rememberable? -%>
-    <%= f.check_box :remember_me, label: 'Запомнить меня'%>
-  <% end -%>
 
-  <%= f.primary "Войти"%>
-<% end %>
-<br />
-<%= render "devise/shared/links" %>
+
+    <% if devise_mapping.rememberable? -%>
+      <%= f.check_box :remember_me, label: 'Запомнить меня'%>
+    <% end -%>
+
+    <%= f.primary "Войти"%>
+  <% end %>
+  <br />
+  <%= render "devise/shared/links" %>
+</div>
+
