@@ -28,3 +28,6 @@ ru:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
+  event:
+    destroy_message: 'Мероприятие будет удалено навсегда'
+
