@@ -21,7 +21,10 @@ ru:
       deleted: 'Вы успешно удалили мероприятие'
     users:
       updated: 'Вы обновили свой профиль'
-
   app:
     name: 'Шашлыки'
     company: 'Хороший программист 2018'
+  errors:
+    one: "%{count} ошибка"
+    few: "%{count} ошибки"
+    many: "%{count} ошибок"
