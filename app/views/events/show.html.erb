@@ -18,8 +18,9 @@
             <%= link_to 'Изменить', edit_event_path(@event),
                         class: 'btn btn-primary' %>
             <%= link_to 'Удалить', @event, method: :delete,
-                        class: 'btn btn-primary', data: { confirm: t('event.destroy_message') }%>
+                        class: 'btn btn-danger', data: { confirm: t('event.destroy_message') }%>
           </div>
+            <br />
             <% end %>
         </div>
       </div>

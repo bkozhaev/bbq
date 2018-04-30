@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: I18n.t('controllers.events.deleted')
+      redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
     end
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   def destroy
     @event.destroy
-    redirect_to events_url, notice: I18n.t('controllers.events.created')
+    redirect_to events_url, notice: I18n.t('controllers.events.deleted')
   end
 
   private
