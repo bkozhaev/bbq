@@ -6,7 +6,7 @@ gem 'russian'
 
 gem 'twitter-bootstrap-rails'
 
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2.0'
 
 gem 'uglifier', '>= 1.3.0'
 
