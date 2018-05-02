@@ -9,19 +9,21 @@
           <div class="event-description">
             <h1><%= @event.title %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
-            <h3><small><%= link_to @event.address,
-                                   "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+            <h3>
+              <small><%= link_to @event.address,
+                                 "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+            </h3>
             <p><%= @event.description %></p>
           </div>
           <% if current_user_can_edit?(@event) %>
-          <div class="buffer-top">
-            <%= link_to 'Изменить', edit_event_path(@event),
-                        class: 'btn btn-primary' %>
-            <%= link_to 'Удалить', @event, method: :delete,
-                        class: 'btn btn-danger', data: { confirm: t('event.destroy_message') }%>
-          </div>
-            <br />
-            <% end %>
+            <div class="buffer-top">
+              <%= link_to 'Изменить', edit_event_path(@event),
+                          class: 'btn btn-primary' %>
+              <%= link_to 'Удалить', @event, method: :delete,
+                          class: 'btn btn-danger', data: {confirm: t('event.destroy_message')} %>
+            </div>
+            <br/>
+          <% end %>
         </div>
       </div>
     </div>
@@ -52,10 +54,12 @@
           </p>
         </div>
       </div>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
+      <% if @event.user.id != current_user.id %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+        </div>
+        <%= render partial: 'subscriptions/form', locals: {subscription: @new_subsctiption || @event.subscriptions.build} %>
+        </div>
+      <% end %>
       </div>
-      <%= render partial: 'subscriptions/form', locals: {subscription: @new_subsctiption || @event.subscriptions.build} %>
-    </div>
-  </div>
 </div>

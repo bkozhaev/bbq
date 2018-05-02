@@ -3,16 +3,17 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:destroy]
 
 
-
   # POST /subscriptions
   def create
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
-    if @new_subscription.save
-      redirect_to @event, notice: I18n.t('controllers.subscription.created')
-    else
-      render 'events/show', alert: I18n.t('controllers.subscription.error')
+    if @event.user.id != current_user.id
+      if @new_subscription.save
+        redirect_to @event, notice: I18n.t('controllers.subscription.created')
+      else
+        render 'events/show', alert: I18n.t('controllers.subscription.error')
+      end
     end
   end
 
@@ -30,17 +31,17 @@ class SubscriptionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_subscription
-      @subscription = @event.subscriptions.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_subscription
+    @subscription = @event.subscriptions.find(params[:id])
+  end
 
-    def set_event
-      @event = Event.find(params[:event_id])
-    end
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def subscription_params
-      params.fetch(:subscription, {}).permit(:user_email, :user_name)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def subscription_params
+    params.fetch(:subscription, {}).permit(:user_email, :user_name)
+  end
 end
