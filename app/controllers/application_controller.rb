@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
         (model.user == current_user || (model.try(:event).present? && model.event.user == current_user))
   end
 
+  def current_user?
+    user_signed_in?
+  end
+
 end
