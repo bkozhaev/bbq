@@ -29,6 +29,6 @@ class Subscription < ApplicationRecord
   end
 
   def uniqueness_of_email
-    errors.add(:user_email, 'bebebe') if User.exists?(email: self.user_email)
+    errors.add(:user_email, 'Данный email уже есть в базе, впишите другой, или зарегестируйтесь') if User.exists?(email: self.user_email)
   end
 end
