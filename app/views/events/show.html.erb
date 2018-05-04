@@ -15,23 +15,23 @@
             </h3>
             <p><%= @event.description %></p>
           </div>
+
           <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top">
+            <div class="buffer-both">
               <%= link_to 'Изменить', edit_event_path(@event),
                           class: 'btn btn-primary' %>
-              <%= link_to 'Удалить', @event, method: :delete,
-                          class: 'btn btn-danger', data: {confirm: t('event.destroy_message')} %>
             </div>
-            <br/>
           <% end %>
         </div>
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-md-8">
       <div class="event-comments buffer-top">
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        <%= render partial: 'comments/form',
+                   locals: {comment: @new_comment || @event.comments.build} %>
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
@@ -50,17 +50,18 @@
         <div>
           <p>
             <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subsctiption) %>
+                       collection: @event.subscriptions.except(@new_subscription) %>
           </p>
         </div>
       </div>
-      <% unless current_user == @event.user %>
-        <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+              subscription: @new_subscription || @event.subscriptions.build
+          } %>
         </div>
-        <%= render partial: 'subscriptions/form', locals: {subscription: @new_subsctiption || @event.subscriptions.build} %>
-        </div>
-      <% end %>
-
       </div>
+    </div>
+  </div>
 </div>
