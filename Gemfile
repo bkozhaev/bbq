@@ -4,6 +4,9 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'russian'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'rails', '~> 5.2.0'
