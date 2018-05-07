@@ -24,11 +24,11 @@ class Subscription < ApplicationRecord
 
   def find_user
     if self.user == self.event.user
-      errors.add(:user, t('activerecord.models.subscription.user_erorr'))
+      errors.add(:user_email, :invalid)
     end
   end
 
   def uniqueness_of_email
-    errors.add(:user_email, I18n.t('activerecord.models.subscription.email_erorr')) if User.exists?(email: self.user_email)
+    errors.add(:user_email, :dubl_email) if User.exists?(email: self.user_email)
   end
 end

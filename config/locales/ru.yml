@@ -6,9 +6,6 @@ ru:
       subscription: 'Подписка'
       comment: 'Комментарий'
       photo: 'Фотография'
-      subscription:
-        user_erorr: 'Вы не можете подписаться на свое событие'
-        email_erorr: 'Данный email уже есть в без, впишите свой или зарегестируйтесь'
     attributes:
       user:
         email: 'Email'
