@@ -14,6 +14,7 @@ gem 'rails', '~> 5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
+gem 'fog-aws'
 
 group :production do
   gem 'pg'
