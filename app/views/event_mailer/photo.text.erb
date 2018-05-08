@@ -1,0 +1,11 @@
+<%= t '.title' %>
+----
+
+<%= @photo.photo.thumb.url %>
+
+<%= t '.author' %>: <%= @photo.user.name %>
+
+--------------------------------
+<%= t '.event' %>: <%= @photo.event.title %>
+<%= t '.datetime' %>: <%= l @photo.event.datetime %>
+<%= t '.owner' %>: <%= @photo.user.name %>

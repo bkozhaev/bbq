@@ -57,8 +57,11 @@ Rails.application.configure do
       address: 'smtp.gmail.com',
       port: '587',
       user_name: 'baur.kozhaev',
-      password: '',
+      password: 'baurzhan',
       authentication: 'plain',
       enable_starttls_auto: true
   }
+
+  # config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.perform_deliveries = true
 end
