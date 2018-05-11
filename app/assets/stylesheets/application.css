@@ -56,3 +56,8 @@
     padding: 20px 4px 4px;
 }
 
+.is-invalid {
+    border-color: red;
+}
+
+

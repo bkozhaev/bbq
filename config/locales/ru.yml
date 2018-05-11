@@ -18,14 +18,17 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        User: 'Пользователь'
       comment:
         user_name: 'Ваше имя'
         body: 'Комментарий'
+        user: 'Пользователь'
       subscription:
         user_name: 'Ваше имя'
         user_email: 'Ваш email'
       photo:
         photo: 'Фотография'
+        user: 'Пользователь'
   controllers:
       events:
         created: 'Вы создали новое мероприятие'
@@ -85,9 +88,12 @@ ru:
       datetime: 'Состоится'
       owner: 'Организатор'
   activerecord:
+    attributes:
+      photo:
+       user: "Пользователь"
     errors:
       models:
         photo:
           attributes:
             user:
-              required: 'Только авторизированный пользователь может заргужать фотографии'
+              required: 'Только авторизированный %{attribute} может загружать фотографии'
