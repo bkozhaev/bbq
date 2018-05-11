@@ -36,9 +36,11 @@
         </div>
 
         <%# Рисуем форму для добавления новой фотографии %>
-        <div class="event-photo-form">
-          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-        </div>
+        <% if user_signed_in? %>
+          <div class="event-photo-form">
+            <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+          </div>
+        <% end %>
       </div>
 
       <div class="event-comments buffer-top">
@@ -51,32 +53,32 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
-    <div class="col-md-4">
-      <div class="event-owner">
-        <h4>Зовет:</h4>
-        <p><%= render partial: 'users/user', object: @event.user %></p>
+  <div class="col-md-4">
+    <div class="event-owner">
+      <h4>Зовет:</h4>
+      <p><%= render partial: 'users/user', object: @event.user %></p>
+    </div>
+    <div class="event-subscriptions">
+      <h4>Пойдут:</h4>
+      <div>
+        <p>
+          <%= render partial: 'subscriptions/subscription',
+                     collection: @event.subscriptions.except(@new_subscription) %>
+        </p>
       </div>
-      <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
-        <div>
-          <p>
-            <%= render partial: 'subscriptions/subscription',
-                       collection: @event.subscriptions.except(@new_subscription) %>
-          </p>
-        </div>
-      </div>
-      <div class="event-subscription-form">
-        <% unless current_user == @event.user %>
+    </div>
+    <div class="event-subscription-form">
+      <% unless current_user == @event.user %>
         <h4>Я пойду:</h4>
         <div>
           <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build
           } %>
         </div>
-          <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
