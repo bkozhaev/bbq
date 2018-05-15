@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require twitter/bootstrap/alert
 //= require_tree
+//= require map

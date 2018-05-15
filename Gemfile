@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'fog'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :production do
   gem 'pg'
