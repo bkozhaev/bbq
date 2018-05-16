@@ -7,11 +7,11 @@
     <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <%= javascript_include_tag "https://api-maps.yandex.ru/2.1/?lang=ru_RU" %>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", :media => "all" %>
-
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/lightbox.js" %>
 
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -60,6 +60,12 @@
       </footer>
 
     </div> <!-- /container -->
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
 
   </body>
 </html>
