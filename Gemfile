@@ -12,8 +12,7 @@ gem 'twitter-bootstrap-rails'
 gem 'rails', '~> 5.2.0'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'lightbox2-rails'
-gem 'lightbox-bootstrap-rails', '5.1.0.1'
+
 
 gem 'jquery-rails'
 gem 'fog-aws'

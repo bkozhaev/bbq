@@ -16,6 +16,5 @@
 //= require twitter/bootstrap
 //= require map
 //= require_tree
-//= require lightbox-bootstrap
-//= require lightbox
+
 
