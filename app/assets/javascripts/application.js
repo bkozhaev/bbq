@@ -16,5 +16,3 @@
 //= require twitter/bootstrap
 //= require map
 //= require_tree
-
-
