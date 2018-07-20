@@ -26,3 +26,7 @@ S3_BUCKET_NAME
 
 S3_BUCKET_REGION
 #### [Демонстрационная версия приложения](https://bbqfriend.herokuapp.com/)
+
+#### Автор
+[Бауржан Кожаев](https://www.linkedin.com/in/baur-kozhaev-80a277162/)
+* Приложение разработано в учебных целях, и может быть взято за основу серьезного проекта
