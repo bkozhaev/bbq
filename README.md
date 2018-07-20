@@ -1,24 +1,28 @@
-# README
+# Шашлык-Машлык
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение пренданзначено для создания события (например выезда за город) с оповещением и приглашением друзей присоединиться к событию.
+В приложении реализована возможность оповещения событий (новых подписок, комментариев и добавление фотографий) по электронной почте, также добавлена опция входа на страницу события по заданому PIN-коду.
 
-Things you may want to cover:
+#### Запуск приложения
+Проект написан на Ruby v. 2.5.1, Rails v. 5.2.0 После клонирования репозитория выполните команды:
+```
+bundle install
+bundle exec rake db:mirgate
+```
+#### Переменные окружения
+Для корректной работы приложения укажите следующие переменные окружения:
 
-* Ruby version
+SendGrid:
 
-* System dependencies
+SENDGRID_USERNAME
 
-* Configuration
+SENDGRID_PASSWORD
 
-* Database creation
+Amazon S3 Storage:
 
-* Database initialization
+S3_ACCESS_KEY
 
-* How to run the test suite
+S3_BUCKET_NAME
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+S3_BUCKET_REGION
+#### [Демонстрационная версия приложения](https://bbqfriend.herokuapp.com/)
